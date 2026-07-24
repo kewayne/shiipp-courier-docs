@@ -14,11 +14,19 @@ description: "Troubleshooting guide for when customers are not receiving emails 
     The first step is always to check the system's **Email Logs** to see if the email was generated and sent by the platform. You can check these logs in two places:
 
     <Tabs>
-      <Tab title="Global Email Logs">
-        Navigate to **Administration > Email Logs**. Here you can search for the recipient's email address or filter by date.
-      </Tab>
       <Tab title="Customer Profile">
-        Go to **Operations > Customers**, search for the user, open their profile, and click on the **Emails** tab. This will show a history of emails sent specifically to this customer.
+        Go to **Operations \> Customers**, search for the user, open their profile, and click on the **Emails** tab. This will show a history of emails sent specifically to this customer.
+
+        <Frame>
+          ![Image](/images/image-2.png "Image")
+        </Frame>
+      </Tab>
+      <Tab title="Global Email Logs">
+        Navigate to **Administration \> Email Logs**. Here you can search for the recipient's email address or filter by date.
+
+        <Frame>
+          ![Image](/images/image-3.png "Image")
+        </Frame>
       </Tab>
     </Tabs>
 
@@ -27,60 +35,75 @@ description: "Troubleshooting guide for when customers are not receiving emails 
     ### Common Statuses and Errors:
 
     <AccordionGroup>
-      <Accordion icon="check" title="Delivered / Opened">
+      <Accordion title="Delivered / Opened" icon="check">
         The email was successfully delivered to the recipient's email provider. If they still can't see it, it is likely in their **Spam** or **Junk** folder.
       </Accordion>
-      <Accordion icon="triangle-exclamation" title="Failed - Invalid Address">
+
+      <Accordion title="Failed - Invalid Address" icon="triangle-exclamation">
         The log might show an error like `Invalid address: (to): name@gmail` or `user@2345`. This means the email address is malformed (e.g., missing `.com`).
       </Accordion>
-      <Accordion icon="server" title="Failed - Authentication / Connection">
+
+      <Accordion title="Failed - Authentication / Connection" icon="server">
         Errors such as `SMTP Error: Could not authenticate` or `SMTP Error: Could not connect to SMTP host` indicate an issue with your system's SMTP or email provider configuration.
       </Accordion>
-      <Accordion icon="rotate-left" title="Bounced">
+
+      <Accordion title="Bounced" icon="rotate-left">
         The email was rejected by the recipient's server. This often happens if the email address doesn't exist or their inbox is full. Example error: `Permanent SMTP delivery error`.
       </Accordion>
-      <Accordion icon="shield-halved" title="Held / Suppression List">
+
+      <Accordion title="Held / Suppression List" icon="shield-halved">
         If an email bounces multiple times, the provider may place it on a suppression list to protect your sender reputation. Example error: `Recipient is on the suppression list (reason: too many hard fails)`.
       </Accordion>
-      <Accordion icon="magnifying-glass" title="Check for existence">
+
+      <Accordion title="Check for existence" icon="magnifying-glass">
         If there is no log entry at all, the system never triggered the email. Check if the action that triggers the email (e.g., package status change) actually occurred.
       </Accordion>
     </AccordionGroup>
   </Step>
-
   <Step title="Verify the Customer's Email Address">
     As seen from the "Invalid Address" errors above, emails are frequently not received simply because of a typo in the customer's profile.
 
-    1. Go to **Operations > Customers** and search for the user.
+    1. Go to **Operations \> Customers** and search for the user.
     2. Click on their name to open the **Customer Profile**.
-    3. Verify that the email address on file is exactly correct (checking for missing `.com`, misspelled domains, etc.). 
-    
-    <Note>If there's a typo, update their profile immediately to ensure future communications are delivered.</Note>
-  </Step>
+    3. Verify that the email address on file is exactly correct (checking for missing `.com`, misspelled domains, etc.).
 
+    <Note>
+      If there's a typo, update their profile immediately to ensure future communications are delivered.
+    </Note>
+  </Step>
   <Step title="Ask the Recipient to Check Spam/Junk Folders">
     If the Email Logs show the message as sent but the customer hasn't seen it, their email provider (e.g., Gmail, Outlook, Yahoo) might have filtered it.
 
     - Ask the customer to check their **Spam**, **Junk**, or **Promotions** folder.
     - Advise them to add your sending email address to their contacts or **"Safe Senders"** list to ensure future emails go straight to their inbox.
   </Step>
-
   <Step title="Check System Email Configuration">
-    If *no one* is receiving emails and the logs show consistent failures (or if no logs are being generated for system-wide actions), there may be an issue with the underlying email configuration.
+    If _no one_ is receiving emails and the logs show consistent failures (or if no logs are being generated for system-wide actions), there may be an issue with the underlying email configuration.
 
     - Verify that your SMTP settings or Email Provider integration is correctly set up.
     - Check if your email provider account is in good standing (e.g., not suspended, no billing issues).
-    
-    <Warning>Ensure your domain's DNS records (SPF, DKIM, DMARC) are properly configured. Poor DNS configuration can cause major email providers to silently drop your emails.</Warning>
-  </Step>
 
+    <Warning>
+      Ensure your domain's DNS records (SPF, DKIM, DMARC) are properly configured. Poor DNS configuration can cause major email providers to silently drop your emails.
+    </Warning>
+  </Step>
   <Step title="Check Notification Settings">
     Ensure that the specific notification hasn't been disabled.
 
-    - Navigate to **Administration > Notification Templates**.
+    - Navigate to **Administration \> Notification Templates**.
     - Check if the template for the email in question is active and properly configured.
   </Step>
 </Steps>
+
+<Frame>
+  ![Image](/images/image-4.png "Image")
+</Frame>
+
+(image above showing email log details (the sidebar) with delivery error and the reason)
+
+<Frame>
+  ![Image](/images/image-5.png "Image")
+</Frame>
 
 ---
 
