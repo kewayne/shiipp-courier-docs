@@ -101,6 +101,17 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "Troubleshooting",
+        "groups": [
+          {
+            "group": "Common Issues",
+            "pages": [
+              "troubleshooting/not-receiving-emails"
+            ]
+          }
+        ]
       }
     ]
   }
