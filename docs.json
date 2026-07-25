@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "name": "Shiipp Courier",
-  "theme": "maple",
+  "theme": "luma",
   "colors": {
     "primary": "#14B8A6",
     "light": "#2DD4BF",
