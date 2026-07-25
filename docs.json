@@ -3,11 +3,14 @@
   "name": "Shiipp Courier",
   "theme": "maple",
   "colors": {
-    "primary": "#635bff",
-    "light": "#e0e7ff",
-    "dark": "#3730a3"
+    "primary": "#14B8A6",
+    "light": "#2DD4BF",
+    "dark": "#0F766E"
   },
-  "favicon": "/favicon.svg",
+  "favicon": {
+    "light": "/images/ChatGPTImageJul25,2026,09_51_40AM.png",
+    "dark": "/images/ChatGPTImageJul25,2026,09_51_40AM.png"
+  },
   "navigation": {
     "tabs": [
       {
@@ -114,5 +117,18 @@
         ]
       }
     ]
+  },
+  "logo": {
+    "light": "/images/ChatGPTImageJul25,2026,09_51_47AM.png",
+    "dark": "/images/ChatGPTImageJul25,2026,09_51_47AM.png"
+  },
+  "background": {
+    "color": {
+      "light": "#F8FAFC",
+      "dark": "#0B1220"
+    }
+  },
+  "navbar": {
+    "links": []
   }
 }
